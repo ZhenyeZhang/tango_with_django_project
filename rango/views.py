@@ -42,7 +42,7 @@ def about(request):
     if request.session.test_cookie_worked():
         print("TEST COOKIE WORKED!")
         request.session.delete_test_cookie()
-    context_dict = {'message': "This tutorial has been put together by jwh5566."}
+    context_dict = {'message': "This tutorial has been put together by ZhenyeZhang."}
     return render(request, 'rango/about.html', context=context_dict)
 
 
@@ -144,13 +144,11 @@ def restricted(request):
     return HttpResponse("Since you're logged in, you can see this text!")
 
 
-
-
 def visitor_cookie_handler(request):
     visits = int(get_server_side_cookie(request, 'visits', '1'))
     last_visit_cookie = get_server_side_cookie(request, 'last_visit', str(datetime.now()))
     last_visit_time = datetime.strptime(last_visit_cookie[:-7],
-                                         '%Y-%m-%d %H:%M:%S')
+                                        '%Y-%m-%d %H:%M:%S')
     if (datetime.now() - last_visit_time).seconds > 5:
         visits += 1
         request.session['last_visit'] = last_visit_cookie
