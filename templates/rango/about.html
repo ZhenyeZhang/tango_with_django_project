@@ -1,12 +1,16 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
-    <p>{{ message }}</p>
-    <img src="{{ MEDIA_URL }}cat.jpg" alt="picture of about" />
-</body>
-</html>
+{% block title_block %}
+	About
+{% endblock %}
+
+{% block body_block %}
+
+        		<h1>About Page</h1>
+       		 This tutorial has been put together by: Zhenye Zhang
+		<p>You have visit this site : {{ visits }} times!</p>
+        		<a href="/rango/">Home</a><br />
+        		<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
+		<strong>{{ myContext }}</strong> 
+{% endblock %}
