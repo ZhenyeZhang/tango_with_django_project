@@ -1,11 +1,10 @@
-{% extends 'rango/base.html' %}
-{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rango</title>
+	</head>
 
-{% block title_block %}
-	Add page
-{% endblock %}
-
-{% block body_block %}
+	<body>
 	{% if category %}
 		<h1>Add a Page to {{category.name}}</h1>
 		<div>
@@ -25,4 +24,5 @@
 		A category by this name does not exist
 	{% endif %}
 		</div>
-{% endblock %}
+	</body>
+</html>
