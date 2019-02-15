@@ -6,11 +6,16 @@
 {% endblock %}
 
 {% block body_block %}
-
-        		<h1>About Page</h1>
-       		 This tutorial has been put together by: Zhenye Zhang
-		<p>You have visit this site : {{ visits }} times!</p>
-        		<a href="/rango/">Home</a><br />
-        		<img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
-		<strong>{{ myContext }}</strong> 
+	<h1>About page</h1>
+	<div>
+		Rango says here is the about page.<br/>
+		<strong>{{boldmessage}}</strong><br />
+	</div>
+	<div>
+		<img src="{% static "images/rango.jpg" %}"
+			alt="Picture of Rango" />
+		<img src="{{ MEDIA_URL }}cat.jpg"
+			alt="Picture of About page" />
+	</div>
 {% endblock %}
+
